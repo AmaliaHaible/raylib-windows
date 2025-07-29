@@ -22,7 +22,7 @@
 #include <math.h>
 
 // Draw rectangle with rounded edges and horizontal gradient, with options to choose side of roundness
-static void DrawRectangleRoundedGradientH(Rectangle rec, float roundnessLeft, float roundnessRight, int segments, Color left, Color right);
+static void DrawRectangleRoundedGradientH(RL_Rectangle rec, float roundnessLeft, float roundnessRight, int segments, Color left, Color right);
 
 //------------------------------------------------------------------------------------
 // Program main entry point
@@ -45,7 +45,7 @@ int main(void)
         // Update rectangle bounds
         //----------------------------------------------------------------------------------
         float width = GetScreenWidth()/2.0f, height = GetScreenHeight()/6.0f;
-        Rectangle rec = {
+        RL_Rectangle rec = {
             GetScreenWidth() / 2.0f - width/2,
             GetScreenHeight() / 2.0f - 5*(height/2),
             width, height
@@ -77,7 +77,7 @@ int main(void)
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;
@@ -85,7 +85,7 @@ int main(void)
 
 // Draw rectangle with rounded edges and horizontal gradient, with options to choose side of roundness
 // NOTE: Adapted from both 'DrawRectangleRounded()' and 'DrawRectangleGradientH()' raylib [rshapes] implementations
-static void DrawRectangleRoundedGradientH(Rectangle rec, float roundnessLeft, float roundnessRight, int segments, Color left, Color right)
+static void DrawRectangleRoundedGradientH(RL_Rectangle rec, float roundnessLeft, float roundnessRight, int segments, Color left, Color right)
 {
     // Neither side is rounded
     if ((roundnessLeft <= 0.0f && roundnessRight <= 0.0f) || (rec.width < 1) || (rec.height < 1 ))

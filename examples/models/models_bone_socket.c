@@ -156,9 +156,9 @@ int main(void)
                 DrawGrid(10, 1.0f);
             EndMode3D();
 
-            DrawText("Use the T/G to switch animation", 10, 10, 20, GRAY);
-            DrawText("Use the F/H to rotate character left/right", 10, 35, 20, GRAY);
-            DrawText("Use the 1,2,3 to toggle shown of hat, sword and shield", 10, 60, 20, GRAY);
+            RL_DrawText("Use the T/G to switch animation", 10, 10, 20, GRAY);
+            RL_DrawText("Use the F/H to rotate character left/right", 10, 35, 20, GRAY);
+            RL_DrawText("Use the 1,2,3 to toggle shown of hat, sword and shield", 10, 60, 20, GRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -172,7 +172,7 @@ int main(void)
     // Unload equipment model and meshes/material
     for (int i = 0; i < BONE_SOCKETS; i++) UnloadModel(equipModel[i]);
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

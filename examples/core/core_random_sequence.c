@@ -22,7 +22,7 @@
 
 typedef struct ColorRect {
     Color c;
-    Rectangle r;
+    RL_Rectangle r;
 } ColorRect;
 
 //------------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ int main(void)
 
             const char *rectCountText = TextFormat("%d rectangles", rectCount);
             int rectCountTextSize = MeasureText(rectCountText, fontSize);
-            DrawText(rectCountText, screenWidth - rectCountTextSize - 10, 10, fontSize, BLACK);
+            RL_DrawText(rectCountText, screenWidth - rectCountTextSize - 10, 10, fontSize, BLACK);
 
             DrawFPS(10, 10);
 
@@ -107,7 +107,7 @@ int main(void)
     // De-Initialization
     //--------------------------------------------------------------------------------------
     free(rectangles);
-    CloseWindow(); // Close window and OpenGL context
+    RL_CloseWindow(); // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;
@@ -140,7 +140,7 @@ static ColorRect *GenerateRandomColorRectSequence(float rectCount, float rectWid
         int rectHeight = (int)Remap((float)seq[i], 0, rectCount - 1, 0, screenHeight);
         
         rectangles[i].c = GenerateRandomColor();
-        rectangles[i].r = CLITERAL(Rectangle){ startX + i*rectWidth, screenHeight - rectHeight, rectWidth, (float)rectHeight };
+        rectangles[i].r = CLITERAL(RL_Rectangle){ startX + i*rectWidth, screenHeight - rectHeight, rectWidth, (float)rectHeight };
     }
     
     UnloadRandomSequence(seq);
@@ -178,10 +178,10 @@ static void DrawTextCenterKeyHelp(const char *key, const char *text, int posX, i
     int textSize = MeasureText(text, fontSize); 
     int textSizeCurrent = 0;
 
-    DrawText("Press", posX, posY, fontSize, color);
+    RL_DrawText("Press", posX, posY, fontSize, color);
     textSizeCurrent += pressSize + 2*spaceSize;
-    DrawText(key, posX + textSizeCurrent, posY, fontSize, RED);
+    RL_DrawText(key, posX + textSizeCurrent, posY, fontSize, RED);
     DrawRectangle(posX + textSizeCurrent, posY + fontSize, keySize, 3, RED);
     textSizeCurrent += keySize + 2*spaceSize;
-    DrawText(text, posX + textSizeCurrent, posY, fontSize, color);
+    RL_DrawText(text, posX + textSizeCurrent, posY, fontSize, color);
 }

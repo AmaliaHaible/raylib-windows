@@ -98,7 +98,7 @@ int main(void)
                 DrawGrid(10, 1.0f);     // Draw a grid
             EndMode3D();                // End 3d mode drawing, returns to orthographic 2d mode
 
-            DrawText("TEXT DRAWN IN RENDER TEXTURE", 200, 10, 30, RED);
+            RL_DrawText("TEXT DRAWN IN RENDER TEXTURE", 200, 10, 30, RED);
         EndTextureMode();               // End drawing to texture (now we have a texture available for next passes)
 
         BeginDrawing();
@@ -107,11 +107,11 @@ int main(void)
             // Enable shader using the custom uniform
             BeginShaderMode(shader);
                 // NOTE: Render texture must be y-flipped due to default OpenGL coordinates (left-bottom)
-                DrawTextureRec(target.texture, (Rectangle){ 0, 0, (float)target.texture.width, (float)-target.texture.height }, (Vector2){ 0, 0 }, WHITE);
+                DrawTextureRec(target.texture, (RL_Rectangle){ 0, 0, (float)target.texture.width, (float)-target.texture.height }, (Vector2){ 0, 0 }, WHITE);
             EndShaderMode();
 
             // Draw some 2d text over drawn texture
-            DrawText("(c) Barracks 3D model by Alberto Cano", screenWidth - 220, screenHeight - 20, 10, GRAY);
+            RL_DrawText("(c) Barracks 3D model by Alberto Cano", screenWidth - 220, screenHeight - 20, 10, GRAY);
             DrawFPS(10, 10);
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -124,7 +124,7 @@ int main(void)
     UnloadModel(model);                 // Unload model
     UnloadRenderTexture(target);        // Unload render texture
 
-    CloseWindow();                      // Close window and OpenGL context
+    RL_CloseWindow();                      // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

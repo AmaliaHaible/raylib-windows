@@ -176,8 +176,8 @@ int main(void)
         
         EndMode3D();
 
-        DrawText("Shadows in raylib using the shadowmapping algorithm!", screenWidth - 320, screenHeight - 20, 10, GRAY);
-        DrawText("Use the arrow keys to rotate the light!", 10, 10, 30, RED);
+        RL_DrawText("Shadows in raylib using the shadowmapping algorithm!", screenWidth - 320, screenHeight - 20, 10, GRAY);
+        RL_DrawText("Use the arrow keys to rotate the light!", 10, 10, 30, RED);
 
         EndDrawing();
 
@@ -197,7 +197,7 @@ int main(void)
     UnloadModelAnimations(robotAnimations, animCount);
     UnloadShadowmapRenderTexture(shadowMap);
 
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

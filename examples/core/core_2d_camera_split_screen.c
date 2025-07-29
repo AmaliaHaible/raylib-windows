@@ -34,8 +34,8 @@ int main(void)
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - 2d camera split screen");
 
-    Rectangle player1 = { 200, 200, PLAYER_SIZE, PLAYER_SIZE };
-    Rectangle player2 = { 250, 200, PLAYER_SIZE, PLAYER_SIZE };
+    RL_Rectangle player1 = { 200, 200, PLAYER_SIZE, PLAYER_SIZE };
+    RL_Rectangle player2 = { 250, 200, PLAYER_SIZE, PLAYER_SIZE };
 
     Camera2D camera1 = { 0 };
     camera1.target = (Vector2){ player1.x, player1.y };
@@ -53,7 +53,7 @@ int main(void)
     RenderTexture screenCamera2 = LoadRenderTexture(screenWidth/2, screenHeight);
 
     // Build a flipped rectangle the size of the split view to use for drawing later
-    Rectangle splitScreenRect = { 0.0f, 0.0f, (float)screenCamera1.texture.width, (float)-screenCamera1.texture.height };
+    RL_Rectangle splitScreenRect = { 0.0f, 0.0f, (float)screenCamera1.texture.width, (float)-screenCamera1.texture.height };
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
@@ -99,7 +99,7 @@ int main(void)
                 {
                     for (int j = 0; j < screenHeight/PLAYER_SIZE; j++)
                     {
-                        DrawText(TextFormat("[%i,%i]", i, j), 10 + PLAYER_SIZE*i, 15 + PLAYER_SIZE*j, 10, LIGHTGRAY);
+                        RL_DrawText(TextFormat("[%i,%i]", i, j), 10 + PLAYER_SIZE*i, 15 + PLAYER_SIZE*j, 10, LIGHTGRAY);
                     }
                 }
 
@@ -108,7 +108,7 @@ int main(void)
             EndMode2D();
             
             DrawRectangle(0, 0, GetScreenWidth()/2, 30, Fade(RAYWHITE, 0.6f));
-            DrawText("PLAYER1: W/S/A/D to move", 10, 10, 10, MAROON);
+            RL_DrawText("PLAYER1: W/S/A/D to move", 10, 10, 10, MAROON);
             
         EndTextureMode();
 
@@ -132,7 +132,7 @@ int main(void)
                 {
                     for (int j = 0; j < screenHeight/PLAYER_SIZE; j++)
                     {
-                        DrawText(TextFormat("[%i,%i]", i, j), 10 + PLAYER_SIZE*i, 15 + PLAYER_SIZE*j, 10, LIGHTGRAY);
+                        RL_DrawText(TextFormat("[%i,%i]", i, j), 10 + PLAYER_SIZE*i, 15 + PLAYER_SIZE*j, 10, LIGHTGRAY);
                     }
                 }
 
@@ -142,7 +142,7 @@ int main(void)
             EndMode2D();
             
             DrawRectangle(0, 0, GetScreenWidth()/2, 30, Fade(RAYWHITE, 0.6f));
-            DrawText("PLAYER2: UP/DOWN/LEFT/RIGHT to move", 10, 10, 10, DARKBLUE);
+            RL_DrawText("PLAYER2: UP/DOWN/LEFT/RIGHT to move", 10, 10, 10, DARKBLUE);
             
         EndTextureMode();
 
@@ -162,7 +162,7 @@ int main(void)
     UnloadRenderTexture(screenCamera1); // Unload render texture
     UnloadRenderTexture(screenCamera2); // Unload render texture
 
-    CloseWindow();                      // Close window and OpenGL context
+    RL_CloseWindow();                      // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

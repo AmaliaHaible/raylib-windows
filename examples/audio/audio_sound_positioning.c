@@ -67,7 +67,7 @@ int main(void)
         };
 
         SetSoundPosition(camera, sound, spherePos, 20.0f);
-        if (!IsSoundPlaying(sound)) PlaySound(sound);
+        if (!IsSoundPlaying(sound)) RL_PlaySound(sound);
         //----------------------------------------------------------------------------------
 
         // Draw
@@ -90,7 +90,7 @@ int main(void)
     UnloadSound(sound);
     CloseAudioDevice();     // Close audio device
     
-    CloseWindow();          // Close window and OpenGL context
+    RL_CloseWindow();          // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 }
 

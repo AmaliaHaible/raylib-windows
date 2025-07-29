@@ -110,25 +110,25 @@ int main(void)
             {
                 // NOTE: SDF fonts require a custom SDf shader to compute fragment color
                 BeginShaderMode(shader);    // Activate SDF font shader
-                    DrawTextEx(fontSDF, msg, fontPosition, fontSize, 0, BLACK);
+                    RL_DrawTextEx(fontSDF, msg, fontPosition, fontSize, 0, BLACK);
                 EndShaderMode();            // Activate our default shader for next drawings
 
                 DrawTexture(fontSDF.texture, 10, 10, BLACK);
             }
             else
             {
-                DrawTextEx(fontDefault, msg, fontPosition, fontSize, 0, BLACK);
+                RL_DrawTextEx(fontDefault, msg, fontPosition, fontSize, 0, BLACK);
                 DrawTexture(fontDefault.texture, 10, 10, BLACK);
             }
 
-            if (currentFont == 1) DrawText("SDF!", 320, 20, 80, RED);
-            else DrawText("default font", 315, 40, 30, GRAY);
+            if (currentFont == 1) RL_DrawText("SDF!", 320, 20, 80, RED);
+            else RL_DrawText("default font", 315, 40, 30, GRAY);
 
-            DrawText("FONT SIZE: 16.0", GetScreenWidth() - 240, 20, 20, DARKGRAY);
-            DrawText(TextFormat("RENDER SIZE: %02.02f", fontSize), GetScreenWidth() - 240, 50, 20, DARKGRAY);
-            DrawText("Use MOUSE WHEEL to SCALE TEXT!", GetScreenWidth() - 240, 90, 10, DARKGRAY);
+            RL_DrawText("FONT SIZE: 16.0", GetScreenWidth() - 240, 20, 20, DARKGRAY);
+            RL_DrawText(TextFormat("RENDER SIZE: %02.02f", fontSize), GetScreenWidth() - 240, 50, 20, DARKGRAY);
+            RL_DrawText("Use MOUSE WHEEL to SCALE TEXT!", GetScreenWidth() - 240, 90, 10, DARKGRAY);
 
-            DrawText("HOLD SPACE to USE SDF FONT VERSION!", 340, GetScreenHeight() - 30, 20, MAROON);
+            RL_DrawText("HOLD SPACE to USE SDF FONT VERSION!", 340, GetScreenHeight() - 30, 20, MAROON);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -141,7 +141,7 @@ int main(void)
 
     UnloadShader(shader);       // Unload SDF shader
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

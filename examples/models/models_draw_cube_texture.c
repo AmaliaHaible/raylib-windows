@@ -21,7 +21,7 @@
 // Custom Functions Declaration
 //------------------------------------------------------------------------------------
 void DrawCubeTexture(Texture2D texture, Vector3 position, float width, float height, float length, Color color); // Draw cube textured
-void DrawCubeTextureRec(Texture2D texture, Rectangle source, Vector3 position, float width, float height, float length, Color color); // Draw cube with a region of a texture
+void DrawCubeTextureRec(Texture2D texture, RL_Rectangle source, Vector3 position, float width, float height, float length, Color color); // Draw cube with a region of a texture
 
 //------------------------------------------------------------------------------------
 // Program main entry point
@@ -69,7 +69,7 @@ int main(void)
                 DrawCubeTexture(texture, (Vector3){ -2.0f, 2.0f, 0.0f }, 2.0f, 4.0f, 2.0f, WHITE);
 
                 // Draw cube with an applied texture, but only a defined rectangle piece of the texture
-                DrawCubeTextureRec(texture, (Rectangle){ 0.0f, texture.height/2.0f, texture.width/2.0f, texture.height/2.0f }, 
+                DrawCubeTextureRec(texture, (RL_Rectangle){ 0.0f, texture.height/2.0f, texture.width/2.0f, texture.height/2.0f }, 
                     (Vector3){ 2.0f, 1.0f, 0.0f }, 2.0f, 2.0f, 2.0f, WHITE);
 
                 DrawGrid(10, 1.0f);        // Draw a grid
@@ -86,7 +86,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
     UnloadTexture(texture); // Unload texture
     
-    CloseWindow();          // Close window and OpenGL context
+    RL_CloseWindow();          // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;
@@ -159,7 +159,7 @@ void DrawCubeTexture(Texture2D texture, Vector3 position, float width, float hei
 }
 
 // Draw cube with texture piece applied to all faces
-void DrawCubeTextureRec(Texture2D texture, Rectangle source, Vector3 position, float width, float height, float length, Color color)
+void DrawCubeTextureRec(Texture2D texture, RL_Rectangle source, Vector3 position, float width, float height, float length, Color color)
 {
     float x = position.x;
     float y = position.y;

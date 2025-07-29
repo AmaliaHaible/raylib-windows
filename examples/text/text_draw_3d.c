@@ -407,29 +407,29 @@ int main(void)
 
             // Draw 2D info text & stats
             //-------------------------------------------------------------------------
-            DrawText("Drag & drop a font file to change the font!\nType something, see what happens!\n\n"
+            RL_DrawText("Drag & drop a font file to change the font!\nType something, see what happens!\n\n"
             "Press [F3] to toggle the camera", 10, 35, 10, BLACK);
 
             quads += TextLength(text)*2*layers;
             char *tmp = (char *)TextFormat("%2i layer(s) | %s camera | %4i quads (%4i verts)", layers, spin? "ORBITAL" : "FREE", quads, quads*4);
             int width = MeasureText(tmp, 10);
-            DrawText(tmp, screenWidth - 20 - width, 10, 10, DARKGREEN);
+            RL_DrawText(tmp, screenWidth - 20 - width, 10, 10, DARKGREEN);
 
             tmp = "[Home]/[End] to add/remove 3D text layers";
             width = MeasureText(tmp, 10);
-            DrawText(tmp, screenWidth - 20 - width, 25, 10, DARKGRAY);
+            RL_DrawText(tmp, screenWidth - 20 - width, 25, 10, DARKGRAY);
 
             tmp = "[Insert]/[Delete] to increase/decrease distance between layers";
             width = MeasureText(tmp, 10);
-            DrawText(tmp, screenWidth - 20 - width, 40, 10, DARKGRAY);
+            RL_DrawText(tmp, screenWidth - 20 - width, 40, 10, DARKGRAY);
 
             tmp = "click the [CUBE] for a random color";
             width = MeasureText(tmp, 10);
-            DrawText(tmp, screenWidth - 20 - width, 55, 10, DARKGRAY);
+            RL_DrawText(tmp, screenWidth - 20 - width, 55, 10, DARKGRAY);
 
             tmp = "[Tab] to toggle multicolor mode";
             width = MeasureText(tmp, 10);
-            DrawText(tmp, screenWidth - 20 - width, 70, 10, DARKGRAY);
+            RL_DrawText(tmp, screenWidth - 20 - width, 70, 10, DARKGRAY);
             //-------------------------------------------------------------------------
 
             DrawFPS(10, 10);
@@ -441,7 +441,7 @@ int main(void)
     // De-Initialization
     //--------------------------------------------------------------------------------------
     UnloadFont(font);
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;
@@ -465,7 +465,7 @@ static void DrawTextCodepoint3D(Font font, int codepoint, Vector3 position, floa
 
     // Character source rectangle from font texture atlas
     // NOTE: We consider chars padding when drawing, it could be required for outline/glow shader effects
-    Rectangle srcRec = { font.recs[index].x - (float)font.glyphPadding, font.recs[index].y - (float)font.glyphPadding,
+    RL_Rectangle srcRec = { font.recs[index].x - (float)font.glyphPadding, font.recs[index].y - (float)font.glyphPadding,
                          font.recs[index].width + 2.0f*font.glyphPadding, font.recs[index].height + 2.0f*font.glyphPadding };
 
     float width = (float)(font.recs[index].width + 2.0f*font.glyphPadding)*scale;

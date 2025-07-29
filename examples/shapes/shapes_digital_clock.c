@@ -111,7 +111,7 @@ int main(void)
 
             DrawClock(myClock, (Vector2){ 400, 225 }); // Clock in selected mode
 
-            DrawText("Press [SPACE] to switch clock mode", 10, 10, 20, DARKGRAY);
+            RL_DrawText("Press [SPACE] to switch clock mode", 10, 10, 20, DARKGRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -119,7 +119,7 @@ int main(void)
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;
@@ -162,24 +162,24 @@ static void DrawClock(Clock clock, Vector2 centerPosition)
     {
         DrawCircleLinesV(centerPosition, clock.minute.length, LIGHTGRAY);
 
-        DrawText(TextFormat("%i", clock.second.value), centerPosition.x + (clock.second.length - 10)*cosf(clock.second.angle*(float)(PI/180)) - DIGIT_SIZE/2, centerPosition.y + clock.second.length*sinf(clock.second.angle*(float)(PI/180)) - DIGIT_SIZE/2, DIGIT_SIZE, GRAY);
+        RL_DrawText(TextFormat("%i", clock.second.value), centerPosition.x + (clock.second.length - 10)*cosf(clock.second.angle*(float)(PI/180)) - DIGIT_SIZE/2, centerPosition.y + clock.second.length*sinf(clock.second.angle*(float)(PI/180)) - DIGIT_SIZE/2, DIGIT_SIZE, GRAY);
 
-        DrawText(TextFormat("%i", clock.minute.value), clock.minute.origin.x + clock.minute.length*cosf(clock.minute.angle*(float)(PI/180)) - DIGIT_SIZE/2, centerPosition.y + clock.minute.length*sinf(clock.minute.angle*(float)(PI/180)) - DIGIT_SIZE/2, DIGIT_SIZE, RED);
+        RL_DrawText(TextFormat("%i", clock.minute.value), clock.minute.origin.x + clock.minute.length*cosf(clock.minute.angle*(float)(PI/180)) - DIGIT_SIZE/2, centerPosition.y + clock.minute.length*sinf(clock.minute.angle*(float)(PI/180)) - DIGIT_SIZE/2, DIGIT_SIZE, RED);
 
-        DrawText(TextFormat("%i", clock.hour.value), centerPosition.x + clock.hour.length*cosf(clock.hour.angle*(float)(PI/180)) - DIGIT_SIZE/2, centerPosition.y + clock.hour.length*sinf(clock.hour.angle*(float)(PI/180)) - DIGIT_SIZE/2, DIGIT_SIZE, GOLD);
+        RL_DrawText(TextFormat("%i", clock.hour.value), centerPosition.x + clock.hour.length*cosf(clock.hour.angle*(float)(PI/180)) - DIGIT_SIZE/2, centerPosition.y + clock.hour.length*sinf(clock.hour.angle*(float)(PI/180)) - DIGIT_SIZE/2, DIGIT_SIZE, GOLD);
     }
     else if (clock.mode == MODE_NORMAL)
     {
         // Draw hand seconds
-        DrawRectanglePro((Rectangle){ centerPosition.x, centerPosition.y, clock.second.length, clock.second.thickness },
+        DrawRectanglePro((RL_Rectangle){ centerPosition.x, centerPosition.y, clock.second.length, clock.second.thickness },
             (Vector2){ 0.0f, clock.second.thickness/2.0f }, clock.second.angle, clock.second.color);
 
         // Draw hand minutes
-        DrawRectanglePro((Rectangle){ centerPosition.x, centerPosition.y, clock.minute.length, clock.minute.thickness },
+        DrawRectanglePro((RL_Rectangle){ centerPosition.x, centerPosition.y, clock.minute.length, clock.minute.thickness },
             (Vector2){ 0.0f, clock.minute.thickness/2.0f }, clock.minute.angle, clock.minute.color);
 
         // Draw hand hours
-        DrawRectanglePro((Rectangle){ centerPosition.x, centerPosition.y, clock.hour.length, clock.hour.thickness },
+        DrawRectanglePro((RL_Rectangle){ centerPosition.x, centerPosition.y, clock.hour.length, clock.hour.thickness },
             (Vector2){ 0.0f, clock.hour.thickness/2.0f }, clock.hour.angle, clock.hour.color);
     }
 }

@@ -74,8 +74,8 @@ int main(void)
             DrawTextureEx(foreground, (Vector2){ scrollingFore, 70 }, 0.0f, 2.0f, WHITE);
             DrawTextureEx(foreground, (Vector2){ foreground.width*2 + scrollingFore, 70 }, 0.0f, 2.0f, WHITE);
 
-            DrawText("BACKGROUND SCROLLING & PARALLAX", 10, 10, 20, RED);
-            DrawText("(c) Cyberpunk Street Environment by Luis Zuno (@ansimuz)", screenWidth - 330, screenHeight - 20, 10, RAYWHITE);
+            RL_DrawText("BACKGROUND SCROLLING & PARALLAX", 10, 10, 20, RED);
+            RL_DrawText("(c) Cyberpunk Street Environment by Luis Zuno (@ansimuz)", screenWidth - 330, screenHeight - 20, 10, RAYWHITE);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -87,7 +87,7 @@ int main(void)
     UnloadTexture(midground);   // Unload midground texture
     UnloadTexture(foreground);  // Unload foreground texture
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

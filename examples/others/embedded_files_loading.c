@@ -78,7 +78,7 @@ int main(void)
     {
         // Update
         //----------------------------------------------------------------------------------
-        if (IsKeyPressed(KEY_SPACE)) PlaySound(sound);      // Play sound
+        if (IsKeyPressed(KEY_SPACE)) RL_PlaySound(sound);      // Play sound
         //----------------------------------------------------------------------------------
 
         // Draw
@@ -89,8 +89,8 @@ int main(void)
 
             DrawTexture(texture, screenWidth/2 - texture.width/2, 40, WHITE);
 
-            DrawText("raylib logo and sound loaded from header files", 150, 320, 20, LIGHTGRAY);
-            DrawText("Press SPACE to PLAY the sound!", 220, 370, 20, LIGHTGRAY);
+            RL_DrawText("raylib logo and sound loaded from header files", 150, 320, 20, LIGHTGRAY);
+            RL_DrawText("Press SPACE to PLAY the sound!", 220, 370, 20, LIGHTGRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -103,7 +103,7 @@ int main(void)
 
     CloseAudioDevice();     // Close audio device
 
-    CloseWindow();          // Close window and OpenGL context
+    RL_CloseWindow();          // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

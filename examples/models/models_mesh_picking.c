@@ -204,31 +204,31 @@ int main(void)
             EndMode3D();
 
             // Draw some debug GUI text
-            DrawText(TextFormat("Hit Object: %s", hitObjectName), 10, 50, 10, BLACK);
+            RL_DrawText(TextFormat("Hit Object: %s", hitObjectName), 10, 50, 10, BLACK);
 
             if (collision.hit)
             {
                 int ypos = 70;
 
-                DrawText(TextFormat("Distance: %3.2f", collision.distance), 10, ypos, 10, BLACK);
+                RL_DrawText(TextFormat("Distance: %3.2f", collision.distance), 10, ypos, 10, BLACK);
 
-                DrawText(TextFormat("Hit Pos: %3.2f %3.2f %3.2f",
+                RL_DrawText(TextFormat("Hit Pos: %3.2f %3.2f %3.2f",
                                     collision.point.x,
                                     collision.point.y,
                                     collision.point.z), 10, ypos + 15, 10, BLACK);
 
-                DrawText(TextFormat("Hit Norm: %3.2f %3.2f %3.2f",
+                RL_DrawText(TextFormat("Hit Norm: %3.2f %3.2f %3.2f",
                                     collision.normal.x,
                                     collision.normal.y,
                                     collision.normal.z), 10, ypos + 30, 10, BLACK);
 
                 if (triHitInfo.hit && TextIsEqual(hitObjectName, "Triangle"))
-                    DrawText(TextFormat("Barycenter: %3.2f %3.2f %3.2f",  bary.x, bary.y, bary.z), 10, ypos + 45, 10, BLACK);
+                    RL_DrawText(TextFormat("Barycenter: %3.2f %3.2f %3.2f",  bary.x, bary.y, bary.z), 10, ypos + 45, 10, BLACK);
             }
 
-            DrawText("Right click mouse to toggle camera controls", 10, 430, 10, GRAY);
+            RL_DrawText("Right click mouse to toggle camera controls", 10, 430, 10, GRAY);
 
-            DrawText("(c) Turret 3D model by Alberto Cano", screenWidth - 200, screenHeight - 20, 10, GRAY);
+            RL_DrawText("(c) Turret 3D model by Alberto Cano", screenWidth - 200, screenHeight - 20, 10, GRAY);
 
             DrawFPS(10, 10);
 
@@ -241,7 +241,7 @@ int main(void)
     UnloadModel(tower);         // Unload model
     UnloadTexture(texture);     // Unload texture
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

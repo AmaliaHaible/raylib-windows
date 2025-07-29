@@ -82,9 +82,9 @@ int main(void)
 
             EndShaderMode();
 
-            DrawText("Shader-based\ntexture\noutline", 10, 10, 20, GRAY);
-            DrawText("Scroll mouse wheel to\nchange outline size", 10, 72, 20, GRAY);
-            DrawText(TextFormat("Outline size: %i px", (int)outlineSize), 10, 120, 20, MAROON);
+            RL_DrawText("Shader-based\ntexture\noutline", 10, 10, 20, GRAY);
+            RL_DrawText("Scroll mouse wheel to\nchange outline size", 10, 72, 20, GRAY);
+            RL_DrawText(TextFormat("Outline size: %i px", (int)outlineSize), 10, 120, 20, MAROON);
 
             DrawFPS(710, 10);
 
@@ -97,7 +97,7 @@ int main(void)
     UnloadTexture(texture);
     UnloadShader(shdrOutline);
 
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

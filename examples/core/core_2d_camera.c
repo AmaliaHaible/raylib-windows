@@ -30,8 +30,8 @@ int main(void)
 
     InitWindow(screenWidth, screenHeight, "raylib [core] example - 2d camera");
 
-    Rectangle player = { 400, 280, 40, 40 };
-    Rectangle buildings[MAX_BUILDINGS] = { 0 };
+    RL_Rectangle player = { 400, 280, 40, 40 };
+    RL_Rectangle buildings[MAX_BUILDINGS] = { 0 };
     Color buildColors[MAX_BUILDINGS] = { 0 };
 
     int spacing = 0;
@@ -115,7 +115,7 @@ int main(void)
 
             EndMode2D();
 
-            DrawText("SCREEN AREA", 640, 10, 20, RED);
+            RL_DrawText("SCREEN AREA", 640, 10, 20, RED);
 
             DrawRectangle(0, 0, screenWidth, 5, RED);
             DrawRectangle(0, 5, 5, screenHeight - 10, RED);
@@ -125,11 +125,11 @@ int main(void)
             DrawRectangle( 10, 10, 250, 113, Fade(SKYBLUE, 0.5f));
             DrawRectangleLines( 10, 10, 250, 113, BLUE);
 
-            DrawText("Free 2d camera controls:", 20, 20, 10, BLACK);
-            DrawText("- Right/Left to move Offset", 40, 40, 10, DARKGRAY);
-            DrawText("- Mouse Wheel to Zoom in-out", 40, 60, 10, DARKGRAY);
-            DrawText("- A / S to Rotate", 40, 80, 10, DARKGRAY);
-            DrawText("- R to reset Zoom and Rotation", 40, 100, 10, DARKGRAY);
+            RL_DrawText("Free 2d camera controls:", 20, 20, 10, BLACK);
+            RL_DrawText("- Right/Left to move Offset", 40, 40, 10, DARKGRAY);
+            RL_DrawText("- Mouse Wheel to Zoom in-out", 40, 60, 10, DARKGRAY);
+            RL_DrawText("- A / S to Rotate", 40, 80, 10, DARKGRAY);
+            RL_DrawText("- R to reset Zoom and Rotation", 40, 100, 10, DARKGRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -137,7 +137,7 @@ int main(void)
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

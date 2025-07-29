@@ -93,10 +93,10 @@ int main(void)
             DrawRectangle( 10, 10, 320, 93, Fade(SKYBLUE, 0.5f));
             DrawRectangleLines( 10, 10, 320, 93, BLUE);
 
-            DrawText("Camera Controls:", 20, 20, 10, BLACK);
-            DrawText("- WASD to move", 40, 40, 10, DARKGRAY);
-            DrawText("- Mouse Wheel Pressed to Pan", 40, 60, 10, DARKGRAY);
-            DrawText("- Z to zoom to (0, 0, 0)", 40, 80, 10, DARKGRAY);
+            RL_DrawText("Camera Controls:", 20, 20, 10, BLACK);
+            RL_DrawText("- WASD to move", 40, 40, 10, DARKGRAY);
+            RL_DrawText("- Mouse Wheel Pressed to Pan", 40, 60, 10, DARKGRAY);
+            RL_DrawText("- Z to zoom to (0, 0, 0)", 40, 80, 10, DARKGRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -109,7 +109,7 @@ int main(void)
     UnloadRenderTexture(target);    // Unload render texture
     UnloadShader(depthShader);      // Unload shader
 
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
     return 0;
 }

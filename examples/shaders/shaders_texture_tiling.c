@@ -90,7 +90,7 @@ int main(void)
                 
             EndMode3D();
 
-            DrawText("Use mouse to rotate the camera", 10, 10, 20, DARKGRAY);
+            RL_DrawText("Use mouse to rotate the camera", 10, 10, 20, DARKGRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -102,7 +102,7 @@ int main(void)
     UnloadShader(shader);       // Unload shader
     UnloadTexture(texture);     // Unload texture
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
     
     return 0;

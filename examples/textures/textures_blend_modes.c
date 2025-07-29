@@ -32,10 +32,10 @@ int main(void)
     InitWindow(screenWidth, screenHeight, "raylib [textures] example - blend modes");
 
     // NOTE: Textures MUST be loaded after Window initialization (OpenGL context is required)
-    Image bgImage = LoadImage("resources/cyberpunk_street_background.png");     // Loaded in CPU memory (RAM)
+    Image bgImage = RL_LoadImage("resources/cyberpunk_street_background.png");     // Loaded in CPU memory (RAM)
     Texture2D bgTexture = LoadTextureFromImage(bgImage);          // Image converted to texture, GPU memory (VRAM)
 
-    Image fgImage = LoadImage("resources/cyberpunk_street_foreground.png");     // Loaded in CPU memory (RAM)
+    Image fgImage = RL_LoadImage("resources/cyberpunk_street_foreground.png");     // Loaded in CPU memory (RAM)
     Texture2D fgTexture = LoadTextureFromImage(fgImage);          // Image converted to texture, GPU memory (VRAM)
 
     // Once image has been converted to texture and uploaded to VRAM, it can be unloaded from RAM
@@ -74,18 +74,18 @@ int main(void)
             EndBlendMode();
 
             // Draw the texts
-            DrawText("Press SPACE to change blend modes.", 310, 350, 10, GRAY);
+            RL_DrawText("Press SPACE to change blend modes.", 310, 350, 10, GRAY);
 
             switch (blendMode)
             {
-                case BLEND_ALPHA: DrawText("Current: BLEND_ALPHA", (screenWidth / 2) - 60, 370, 10, GRAY); break;
-                case BLEND_ADDITIVE: DrawText("Current: BLEND_ADDITIVE", (screenWidth / 2) - 60, 370, 10, GRAY); break;
-                case BLEND_MULTIPLIED: DrawText("Current: BLEND_MULTIPLIED", (screenWidth / 2) - 60, 370, 10, GRAY); break;
-                case BLEND_ADD_COLORS: DrawText("Current: BLEND_ADD_COLORS", (screenWidth / 2) - 60, 370, 10, GRAY); break;
+                case BLEND_ALPHA: RL_DrawText("Current: BLEND_ALPHA", (screenWidth / 2) - 60, 370, 10, GRAY); break;
+                case BLEND_ADDITIVE: RL_DrawText("Current: BLEND_ADDITIVE", (screenWidth / 2) - 60, 370, 10, GRAY); break;
+                case BLEND_MULTIPLIED: RL_DrawText("Current: BLEND_MULTIPLIED", (screenWidth / 2) - 60, 370, 10, GRAY); break;
+                case BLEND_ADD_COLORS: RL_DrawText("Current: BLEND_ADD_COLORS", (screenWidth / 2) - 60, 370, 10, GRAY); break;
                 default: break;
             }
 
-            DrawText("(c) Cyberpunk Street Environment by Luis Zuno (@ansimuz)", screenWidth - 330, screenHeight - 20, 10, GRAY);
+            RL_DrawText("(c) Cyberpunk Street Environment by Luis Zuno (@ansimuz)", screenWidth - 330, screenHeight - 20, 10, GRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ int main(void)
     UnloadTexture(fgTexture); // Unload foreground texture
     UnloadTexture(bgTexture); // Unload background texture
 
-    CloseWindow();            // Close window and OpenGL context
+    RL_CloseWindow();            // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

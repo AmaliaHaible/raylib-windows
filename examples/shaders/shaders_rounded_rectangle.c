@@ -107,9 +107,9 @@ int main(void)
             ClearBackground(RAYWHITE);
 
             // Draw rectangle box with rounded corners using shader
-            Rectangle rec = { 50, 70, 110, 60 };
+            RL_Rectangle rec = { 50, 70, 110, 60 };
             DrawRectangleLines((int)rec.x - 20, (int)rec.y - 20, (int)rec.width + 40, (int)rec.height + 40, DARKGRAY);
-            DrawText("Rounded rectangle", (int)rec.x - 20, (int)rec.y - 35, 10, DARKGRAY);
+            RL_DrawText("Rounded rectangle", (int)rec.x - 20, (int)rec.y - 35, 10, DARKGRAY);
 
             // Flip Y axis to match shader coordinate system
             rec.y = screenHeight - rec.y - rec.height;
@@ -127,9 +127,9 @@ int main(void)
 
 
             // Draw rectangle shadow using shader
-            rec = (Rectangle){ 50, 200, 110, 60 };
+            rec = (RL_Rectangle){ 50, 200, 110, 60 };
             DrawRectangleLines((int)rec.x - 20, (int)rec.y - 20, (int)rec.width + 40, (int)rec.height + 40, DARKGRAY);
-            DrawText("Rounded rectangle shadow", (int)rec.x - 20, (int)rec.y - 35, 10, DARKGRAY);
+            RL_DrawText("Rounded rectangle shadow", (int)rec.x - 20, (int)rec.y - 35, 10, DARKGRAY);
 
             rec.y = screenHeight - rec.y - rec.height;
             SetShaderValue(shader, roundedRectangle.rectangleLoc, (float[]){ rec.x, rec.y, rec.width, rec.height }, SHADER_UNIFORM_VEC4);
@@ -146,9 +146,9 @@ int main(void)
 
 
             // Draw rectangle's border using shader
-            rec = (Rectangle){ 50, 330, 110, 60 };
+            rec = (RL_Rectangle){ 50, 330, 110, 60 };
             DrawRectangleLines((int)rec.x - 20, (int)rec.y - 20, (int)rec.width + 40, (int)rec.height + 40, DARKGRAY);
-            DrawText("Rounded rectangle border", (int)rec.x - 20, (int)rec.y - 35, 10, DARKGRAY);
+            RL_DrawText("Rounded rectangle border", (int)rec.x - 20, (int)rec.y - 35, 10, DARKGRAY);
 
             rec.y = screenHeight - rec.y - rec.height;
             SetShaderValue(shader, roundedRectangle.rectangleLoc, (float[]){ rec.x, rec.y, rec.width, rec.height }, SHADER_UNIFORM_VEC4);
@@ -165,9 +165,9 @@ int main(void)
 
 
             // Draw one more rectangle with all three colors
-            rec = (Rectangle){ 240, 80, 500, 300 };
+            rec = (RL_Rectangle){ 240, 80, 500, 300 };
             DrawRectangleLines((int)rec.x - 30, (int)rec.y - 30, (int)rec.width + 60, (int)rec.height + 60, DARKGRAY);
-            DrawText("Rectangle with all three combined", (int)rec.x - 30, (int)rec.y - 45, 10, DARKGRAY);
+            RL_DrawText("Rectangle with all three combined", (int)rec.x - 30, (int)rec.y - 45, 10, DARKGRAY);
 
             rec.y = screenHeight - rec.y - rec.height;
             SetShaderValue(shader, roundedRectangle.rectangleLoc, (float[]){ rec.x, rec.y, rec.width, rec.height }, SHADER_UNIFORM_VEC4);
@@ -181,7 +181,7 @@ int main(void)
                 DrawRectangle(0, 0, screenWidth, screenHeight, WHITE);
             EndShaderMode();
 
-            DrawText("(c) Rounded rectangle SDF by Iñigo Quilez. MIT License.", screenWidth - 300, screenHeight - 20, 10, BLACK);
+            RL_DrawText("(c) Rounded rectangle SDF by Iñigo Quilez. MIT License.", screenWidth - 300, screenHeight - 20, 10, BLACK);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -191,7 +191,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
     UnloadShader(shader); // Unload shader
 
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

@@ -50,7 +50,7 @@ int main(void)
     RenderTexture screenPlayer2 = LoadRenderTexture(screenWidth / 2, screenHeight);
 
     // Build a flipped rectangle the size of the split view to use for drawing later
-    Rectangle splitScreenRect = { 0.0f, 0.0f, (float)screenPlayer1.texture.width, (float)-screenPlayer1.texture.height };
+    RL_Rectangle splitScreenRect = { 0.0f, 0.0f, (float)screenPlayer1.texture.width, (float)-screenPlayer1.texture.height };
     
     // Grid data
     int count = 5;
@@ -120,7 +120,7 @@ int main(void)
             EndMode3D();
             
             DrawRectangle(0, 0, GetScreenWidth()/2, 40, Fade(RAYWHITE, 0.8f));
-            DrawText("PLAYER1: W/S to move", 10, 10, 20, MAROON);
+            RL_DrawText("PLAYER1: W/S to move", 10, 10, 20, MAROON);
             
         EndTextureMode();
 
@@ -149,7 +149,7 @@ int main(void)
             EndMode3D();
             
             DrawRectangle(0, 0, GetScreenWidth()/2, 40, Fade(RAYWHITE, 0.8f));
-            DrawText("PLAYER2: UP/DOWN to move", 10, 10, 20, DARKBLUE);
+            RL_DrawText("PLAYER2: UP/DOWN to move", 10, 10, 20, DARKBLUE);
             
         EndTextureMode();
 
@@ -169,7 +169,7 @@ int main(void)
     UnloadRenderTexture(screenPlayer1); // Unload render texture
     UnloadRenderTexture(screenPlayer2); // Unload render texture
 
-    CloseWindow();                      // Close window and OpenGL context
+    RL_CloseWindow();                      // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

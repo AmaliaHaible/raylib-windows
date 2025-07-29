@@ -261,9 +261,9 @@ int main()
                 
             EndMode3D();
             
-            DrawText("Toggle lights: [1][2][3][4]", 10, 40, 20, LIGHTGRAY);
+            RL_DrawText("Toggle lights: [1][2][3][4]", 10, 40, 20, LIGHTGRAY);
 
-            DrawText("(c) Old Rusty Car model by Renafox (https://skfb.ly/LxRy)", screenWidth - 320, screenHeight - 20, 10, LIGHTGRAY);
+            RL_DrawText("(c) Old Rusty Car model by Renafox (https://skfb.ly/LxRy)", screenWidth - 320, screenHeight - 20, 10, LIGHTGRAY);
             
             DrawFPS(10, 10);
 
@@ -287,7 +287,7 @@ int main()
     
     UnloadShader(shader);       // Unload Shader
     
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

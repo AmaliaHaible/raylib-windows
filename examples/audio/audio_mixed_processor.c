@@ -84,7 +84,7 @@ int main(void)
         if (exponent <= 0.5f) exponent = 0.5f;
         if (exponent >= 3.0f) exponent = 3.0f;
 
-        if (IsKeyPressed(KEY_SPACE)) PlaySound(sound);
+        if (IsKeyPressed(KEY_SPACE)) RL_PlaySound(sound);
 
         // Draw
         //----------------------------------------------------------------------------------
@@ -92,9 +92,9 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-            DrawText("MUSIC SHOULD BE PLAYING!", 255, 150, 20, LIGHTGRAY);
+            RL_DrawText("MUSIC SHOULD BE PLAYING!", 255, 150, 20, LIGHTGRAY);
 
-            DrawText(TextFormat("EXPONENT = %.2f", exponent), 215, 180, 20, LIGHTGRAY);
+            RL_DrawText(TextFormat("EXPONENT = %.2f", exponent), 215, 180, 20, LIGHTGRAY);
 
             DrawRectangle(199, 199, 402, 34, LIGHTGRAY);
             for (int i = 0; i < 400; i++)
@@ -103,8 +103,8 @@ int main(void)
             }
             DrawRectangleLines(199, 199, 402, 34, GRAY);
 
-            DrawText("PRESS SPACE TO PLAY OTHER SOUND", 200, 250, 20, LIGHTGRAY);
-            DrawText("USE LEFT AND RIGHT ARROWS TO ALTER DISTORTION", 140, 280, 20, LIGHTGRAY);
+            RL_DrawText("PRESS SPACE TO PLAY OTHER SOUND", 200, 250, 20, LIGHTGRAY);
+            RL_DrawText("USE LEFT AND RIGHT ARROWS TO ALTER DISTORTION", 140, 280, 20, LIGHTGRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -118,7 +118,7 @@ int main(void)
 
     CloseAudioDevice();         // Close audio device (music streaming is automatically stopped)
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

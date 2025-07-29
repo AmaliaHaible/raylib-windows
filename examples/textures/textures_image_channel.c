@@ -31,7 +31,7 @@ int main(void)
 
     InitWindow(screenWidth, screenHeight, "raylib [textures] example - extract channel from image");
 
-    Image fudesumiImage = LoadImage("resources/fudesumi.png");
+    Image fudesumiImage = RL_LoadImage("resources/fudesumi.png");
 
     Image imageAlpha = ImageFromChannel(fudesumiImage, 3);
     ImageAlphaMask(&imageAlpha, imageAlpha);
@@ -61,13 +61,13 @@ int main(void)
     UnloadImage(imageBlue);
     UnloadImage(backgroundImage);
 
-    Rectangle fudesumiRec = {0, 0, fudesumiImage.width, fudesumiImage.height};
+    RL_Rectangle fudesumiRec = {0, 0, fudesumiImage.width, fudesumiImage.height};
 
-    Rectangle fudesumiPos = {50, 10, fudesumiImage.width*0.8f, fudesumiImage.height*0.8f};
-    Rectangle redPos = { 410, 10, fudesumiPos.width / 2, fudesumiPos.height / 2 };
-    Rectangle greenPos = { 600, 10, fudesumiPos.width / 2, fudesumiPos.height / 2 };
-    Rectangle bluePos = { 410, 230, fudesumiPos.width / 2, fudesumiPos.height / 2 };
-    Rectangle alphaPos = { 600, 230, fudesumiPos.width / 2, fudesumiPos.height / 2 };
+    RL_Rectangle fudesumiPos = {50, 10, fudesumiImage.width*0.8f, fudesumiImage.height*0.8f};
+    RL_Rectangle redPos = { 410, 10, fudesumiPos.width / 2, fudesumiPos.height / 2 };
+    RL_Rectangle greenPos = { 600, 10, fudesumiPos.width / 2, fudesumiPos.height / 2 };
+    RL_Rectangle bluePos = { 410, 230, fudesumiPos.width / 2, fudesumiPos.height / 2 };
+    RL_Rectangle alphaPos = { 600, 230, fudesumiPos.width / 2, fudesumiPos.height / 2 };
 
     SetTargetFPS(60);               // Set our game to run at 60 frames-per-second
     //--------------------------------------------------------------------------------------
@@ -104,7 +104,7 @@ int main(void)
     UnloadTexture(textureGreen);
     UnloadTexture(textureBlue);
     UnloadTexture(textureAlpha);
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

@@ -41,7 +41,7 @@ int main(void)
     Vector3 billPositionRotating = { 1.0f, 2.0f, 1.0f };        // Position of rotating billboard
 
     // Entire billboard texture, source is used to take a segment from a larger texture.
-    Rectangle source = { 0.0f, 0.0f, (float)bill.width, (float)bill.height };
+    RL_Rectangle source = { 0.0f, 0.0f, (float)bill.width, (float)bill.height };
 
     // NOTE: Billboard locked on axis-Y
     Vector3 billUp = { 0.0f, 1.0f, 0.0f };
@@ -108,7 +108,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
     UnloadTexture(bill);        // Unload texture
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

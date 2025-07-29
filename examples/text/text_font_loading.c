@@ -71,17 +71,17 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-            DrawText("Hold SPACE to use TTF generated font", 20, 20, 20, LIGHTGRAY);
+            RL_DrawText("Hold SPACE to use TTF generated font", 20, 20, 20, LIGHTGRAY);
 
             if (!useTtf)
             {
-                DrawTextEx(fontBm, msg, (Vector2){ 20.0f, 100.0f }, (float)fontBm.baseSize, 2, MAROON);
-                DrawText("Using BMFont (Angelcode) imported", 20, GetScreenHeight() - 30, 20, GRAY);
+                RL_DrawTextEx(fontBm, msg, (Vector2){ 20.0f, 100.0f }, (float)fontBm.baseSize, 2, MAROON);
+                RL_DrawText("Using BMFont (Angelcode) imported", 20, GetScreenHeight() - 30, 20, GRAY);
             }
             else
             {
-                DrawTextEx(fontTtf, msg, (Vector2){ 20.0f, 100.0f }, (float)fontTtf.baseSize, 2, LIME);
-                DrawText("Using TTF font generated", 20, GetScreenHeight() - 30, 20, GRAY);
+                RL_DrawTextEx(fontTtf, msg, (Vector2){ 20.0f, 100.0f }, (float)fontTtf.baseSize, 2, LIME);
+                RL_DrawText("Using TTF font generated", 20, GetScreenHeight() - 30, 20, GRAY);
             }
 
         EndDrawing();
@@ -93,7 +93,7 @@ int main(void)
     UnloadFont(fontBm);     // AngelCode Font unloading
     UnloadFont(fontTtf);    // TTF Font unloading
 
-    CloseWindow();          // Close window and OpenGL context
+    RL_CloseWindow();          // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

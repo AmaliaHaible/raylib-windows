@@ -87,12 +87,12 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-            DrawText("free fonts included with raylib", 250, 20, 20, DARKGRAY);
+            RL_DrawText("free fonts included with raylib", 250, 20, 20, DARKGRAY);
             DrawLine(220, 50, 590, 50, DARKGRAY);
 
             for (int i = 0; i < MAX_FONTS; i++)
             {
-                DrawTextEx(fonts[i], messages[i], positions[i], fonts[i].baseSize*2.0f, (float)spacings[i], colors[i]);
+                RL_DrawTextEx(fonts[i], messages[i], positions[i], fonts[i].baseSize*2.0f, (float)spacings[i], colors[i]);
             }
 
         EndDrawing();
@@ -105,7 +105,7 @@ int main(void)
     // Fonts unloading
     for (int i = 0; i < MAX_FONTS; i++) UnloadFont(fonts[i]);
 
-    CloseWindow();                 // Close window and OpenGL context
+    RL_CloseWindow();                 // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

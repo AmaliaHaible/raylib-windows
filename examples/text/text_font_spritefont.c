@@ -72,9 +72,9 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-            DrawTextEx(font1, msg1, fontPosition1, (float)font1.baseSize, -3, WHITE);
-            DrawTextEx(font2, msg2, fontPosition2, (float)font2.baseSize, -2, WHITE);
-            DrawTextEx(font3, msg3, fontPosition3, (float)font3.baseSize, 2, WHITE);
+            RL_DrawTextEx(font1, msg1, fontPosition1, (float)font1.baseSize, -3, WHITE);
+            RL_DrawTextEx(font2, msg2, fontPosition2, (float)font2.baseSize, -2, WHITE);
+            RL_DrawTextEx(font3, msg3, fontPosition3, (float)font3.baseSize, 2, WHITE);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -86,7 +86,7 @@ int main(void)
     UnloadFont(font2);      // Font unloading
     UnloadFont(font3);      // Font unloading
 
-    CloseWindow();          // Close window and OpenGL context
+    RL_CloseWindow();          // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

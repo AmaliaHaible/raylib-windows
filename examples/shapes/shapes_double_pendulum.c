@@ -142,15 +142,15 @@ int main(void)
             ClearBackground(BLACK);
 
             // Draw Trails Texture
-            DrawTextureRec(target.texture, (Rectangle){ 0, 0, target.texture.width, -target.texture.height },
+            DrawTextureRec(target.texture, (RL_Rectangle){ 0, 0, target.texture.width, -target.texture.height },
                              (Vector2){ 0, 0 }, WHITE);
 
             // Draw Double Pendulum
-            DrawRectanglePro((Rectangle){ CENTER_X, CENTER_Y, 10 * l1, lineThick },
+            DrawRectanglePro((RL_Rectangle){ CENTER_X, CENTER_Y, 10 * l1, lineThick },
                              (Vector2){0, lineThick * 0.5}, 90 - RAD2DEG * theta1, RAYWHITE);
 
             Vector2 endpoint1 = CalculatePendulumEndPoint(l1, theta1);
-            DrawRectanglePro((Rectangle){ CENTER_X + endpoint1.x, CENTER_Y + endpoint1.y, 10 * l2, lineThick },
+            DrawRectanglePro((RL_Rectangle){ CENTER_X + endpoint1.x, CENTER_Y + endpoint1.y, 10 * l2, lineThick },
                              (Vector2){0, lineThick * 0.5}, 90 - RAD2DEG * theta2, RAYWHITE);
 
         EndDrawing();
@@ -161,7 +161,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
     UnloadRenderTexture(target);
 
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

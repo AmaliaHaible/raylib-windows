@@ -111,7 +111,7 @@ int main(void)
 
             EndMode3D();
 
-            DrawText("Move player with arrow keys to collide", 220, 40, 20, GRAY);
+            RL_DrawText("Move player with arrow keys to collide", 220, 40, 20, GRAY);
 
             DrawFPS(10, 10);
 
@@ -121,7 +121,7 @@ int main(void)
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

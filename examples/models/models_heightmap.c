@@ -35,7 +35,7 @@ int main(void)
     camera.fovy = 45.0f;                                    // Camera field-of-view Y
     camera.projection = CAMERA_PERSPECTIVE;                 // Camera projection type
 
-    Image image = LoadImage("resources/heightmap.png");     // Load heightmap image (RAM)
+    Image image = RL_LoadImage("resources/heightmap.png");     // Load heightmap image (RAM)
     Texture2D texture = LoadTextureFromImage(image);        // Convert image to texture (VRAM)
 
     Mesh mesh = GenMeshHeightmap(image, (Vector3){ 16, 8, 16 }); // Generate heightmap mesh (RAM and VRAM)
@@ -85,7 +85,7 @@ int main(void)
     UnloadTexture(texture);     // Unload texture
     UnloadModel(model);         // Unload model
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

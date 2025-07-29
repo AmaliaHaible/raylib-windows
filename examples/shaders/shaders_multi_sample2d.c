@@ -93,7 +93,7 @@ int main(void)
 
             EndShaderMode();
 
-            DrawText("Use KEY_LEFT/KEY_RIGHT to move texture mixing in shader!", 80, GetScreenHeight() - 40, 20, RAYWHITE);
+            RL_DrawText("Use KEY_LEFT/KEY_RIGHT to move texture mixing in shader!", 80, GetScreenHeight() - 40, 20, RAYWHITE);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -105,7 +105,7 @@ int main(void)
     UnloadTexture(texRed);      // Unload texture
     UnloadTexture(texBlue);     // Unload texture
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

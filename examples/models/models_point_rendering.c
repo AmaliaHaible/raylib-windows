@@ -125,13 +125,13 @@ int main()
             EndMode3D();
 
             // Draw UI text
-            DrawText(TextFormat("Point Count: %d", numPoints), 20, screenHeight - 50, 40, WHITE);
-            DrawText("Up - increase points", 20, 70, 20, WHITE);
-            DrawText("Down - decrease points", 20, 100, 20, WHITE);
-            DrawText("Space - drawing function", 20, 130, 20, WHITE);
+            RL_DrawText(TextFormat("Point Count: %d", numPoints), 20, screenHeight - 50, 40, WHITE);
+            RL_DrawText("Up - increase points", 20, 70, 20, WHITE);
+            RL_DrawText("Down - decrease points", 20, 100, 20, WHITE);
+            RL_DrawText("Space - drawing function", 20, 130, 20, WHITE);
             
-            if (useDrawModelPoints) DrawText("Using: DrawModelPoints()", 20, 160, 20, GREEN);
-            else DrawText("Using: DrawPoint3D()", 20, 160, 20, RED);
+            if (useDrawModelPoints) RL_DrawText("Using: DrawModelPoints()", 20, 160, 20, GREEN);
+            else RL_DrawText("Using: DrawPoint3D()", 20, 160, 20, RED);
             
             DrawFPS(10, 10);
             
@@ -143,7 +143,7 @@ int main()
     //--------------------------------------------------------------------------------------
     UnloadModel(model);
 
-    CloseWindow();
+    RL_CloseWindow();
     //--------------------------------------------------------------------------------------
     return 0;
 }

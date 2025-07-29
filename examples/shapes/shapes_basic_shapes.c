@@ -46,7 +46,7 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-            DrawText("some basic shapes available on raylib", 20, 20, 20, DARKGRAY);
+            RL_DrawText("some basic shapes available on raylib", 20, 20, 20, DARKGRAY);
 
             // Circle shapes and lines
             DrawCircle(screenWidth/5, 120, 35, DARKBLUE);
@@ -83,7 +83,7 @@ int main(void)
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

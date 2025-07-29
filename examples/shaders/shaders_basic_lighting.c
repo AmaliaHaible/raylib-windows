@@ -126,7 +126,7 @@ int main(void)
 
             DrawFPS(10, 10);
 
-            DrawText("Use keys [Y][R][G][B] to toggle lights", 10, 40, 20, DARKGRAY);
+            RL_DrawText("Use keys [Y][R][G][B] to toggle lights", 10, 40, 20, DARKGRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -136,7 +136,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
     UnloadShader(shader);   // Unload shader
 
-    CloseWindow();          // Close window and OpenGL context
+    RL_CloseWindow();          // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

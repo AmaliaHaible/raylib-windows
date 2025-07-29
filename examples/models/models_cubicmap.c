@@ -35,7 +35,7 @@ int main(void)
     camera.fovy = 45.0f;                                    // Camera field-of-view Y
     camera.projection = CAMERA_PERSPECTIVE;                 // Camera projection type
 
-    Image image = LoadImage("resources/cubicmap.png");      // Load cubicmap image (RAM)
+    Image image = RL_LoadImage("resources/cubicmap.png");      // Load cubicmap image (RAM)
     Texture2D cubicmap = LoadTextureFromImage(image);       // Convert image to texture to display (VRAM)
 
     Mesh mesh = GenMeshCubicmap(image, (Vector3){ 1.0f, 1.0f, 1.0f });
@@ -79,8 +79,8 @@ int main(void)
             DrawTextureEx(cubicmap, (Vector2){ screenWidth - cubicmap.width*4.0f - 20, 20.0f }, 0.0f, 4.0f, WHITE);
             DrawRectangleLines(screenWidth - cubicmap.width*4 - 20, 20, cubicmap.width*4, cubicmap.height*4, GREEN);
 
-            DrawText("cubicmap image used to", 658, 90, 10, GRAY);
-            DrawText("generate map 3d model", 658, 104, 10, GRAY);
+            RL_DrawText("cubicmap image used to", 658, 90, 10, GRAY);
+            RL_DrawText("generate map 3d model", 658, 104, 10, GRAY);
 
             DrawFPS(10, 10);
 
@@ -94,7 +94,7 @@ int main(void)
     UnloadTexture(texture);     // Unload map texture
     UnloadModel(model);         // Unload map model
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

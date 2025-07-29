@@ -111,17 +111,17 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-            DrawText("MUSIC SHOULD BE PLAYING!", 245, 150, 20, LIGHTGRAY);
+            RL_DrawText("MUSIC SHOULD BE PLAYING!", 245, 150, 20, LIGHTGRAY);
 
             DrawRectangle(200, 180, 400, 12, LIGHTGRAY);
             DrawRectangle(200, 180, (int)(timePlayed*400.0f), 12, MAROON);
             DrawRectangleLines(200, 180, 400, 12, GRAY);
 
-            DrawText("PRESS SPACE TO RESTART MUSIC", 215, 230, 20, LIGHTGRAY);
-            DrawText("PRESS P TO PAUSE/RESUME MUSIC", 208, 260, 20, LIGHTGRAY);
+            RL_DrawText("PRESS SPACE TO RESTART MUSIC", 215, 230, 20, LIGHTGRAY);
+            RL_DrawText("PRESS P TO PAUSE/RESUME MUSIC", 208, 260, 20, LIGHTGRAY);
             
-            DrawText(TextFormat("PRESS F TO TOGGLE LPF EFFECT: %s", enableEffectLPF? "ON" : "OFF"), 200, 320, 20, GRAY);
-            DrawText(TextFormat("PRESS D TO TOGGLE DELAY EFFECT: %s", enableEffectDelay? "ON" : "OFF"), 180, 350, 20, GRAY);
+            RL_DrawText(TextFormat("PRESS F TO TOGGLE LPF EFFECT: %s", enableEffectLPF? "ON" : "OFF"), 200, 320, 20, GRAY);
+            RL_DrawText(TextFormat("PRESS D TO TOGGLE DELAY EFFECT: %s", enableEffectDelay? "ON" : "OFF"), 180, 350, 20, GRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -135,7 +135,7 @@ int main(void)
 
     RL_FREE(delayBuffer);       // Free delay buffer
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

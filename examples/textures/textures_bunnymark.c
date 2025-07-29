@@ -105,8 +105,8 @@ int main(void)
             }
 
             DrawRectangle(0, 0, screenWidth, 40, BLACK);
-            DrawText(TextFormat("bunnies: %i", bunniesCount), 120, 10, 20, GREEN);
-            DrawText(TextFormat("batched draw calls: %i", 1 + bunniesCount/MAX_BATCH_ELEMENTS), 320, 10, 20, MAROON);
+            RL_DrawText(TextFormat("bunnies: %i", bunniesCount), 120, 10, 20, GREEN);
+            RL_DrawText(TextFormat("batched draw calls: %i", 1 + bunniesCount/MAX_BATCH_ELEMENTS), 320, 10, 20, MAROON);
 
             DrawFPS(10, 10);
 
@@ -120,7 +120,7 @@ int main(void)
 
     UnloadTexture(texBunny);    // Unload bunny texture
 
-    CloseWindow();              // Close window and OpenGL context
+    RL_CloseWindow();              // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

@@ -48,7 +48,7 @@ int main(void)
             }
             else
             {
-                ShowCursor();
+                RL_ShowCursor();
                 isCursorHidden = 0;
             }
         }
@@ -72,11 +72,11 @@ int main(void)
 
             DrawCircleV(ballPosition, 40, ballColor);
 
-            DrawText("move ball with mouse and click mouse button to change color", 10, 10, 20, DARKGRAY);
-            DrawText("Press 'H' to toggle cursor visibility", 10, 30, 20, DARKGRAY);
+            RL_DrawText("move ball with mouse and click mouse button to change color", 10, 10, 20, DARKGRAY);
+            RL_DrawText("Press 'H' to toggle cursor visibility", 10, 30, 20, DARKGRAY);
 
-            if (isCursorHidden == 1) DrawText("CURSOR HIDDEN", 20, 60, 20, RED);
-            else DrawText("CURSOR VISIBLE", 20, 60, 20, LIME);
+            if (isCursorHidden == 1) RL_DrawText("CURSOR HIDDEN", 20, 60, 20, RED);
+            else RL_DrawText("CURSOR VISIBLE", 20, 60, 20, LIME);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -84,7 +84,7 @@ int main(void)
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

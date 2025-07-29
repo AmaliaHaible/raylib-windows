@@ -89,13 +89,13 @@ int main(void)
 
             ClearBackground(RAYWHITE);
 
-            DrawText(TextFormat("TOTAL GIF FRAMES:  %02i", animFrames), 50, 30, 20, LIGHTGRAY);
-            DrawText(TextFormat("CURRENT FRAME: %02i", currentAnimFrame), 50, 60, 20, GRAY);
-            DrawText(TextFormat("CURRENT FRAME IMAGE.DATA OFFSET: %02i", nextFrameDataOffset), 50, 90, 20, GRAY);
+            RL_DrawText(TextFormat("TOTAL GIF FRAMES:  %02i", animFrames), 50, 30, 20, LIGHTGRAY);
+            RL_DrawText(TextFormat("CURRENT FRAME: %02i", currentAnimFrame), 50, 60, 20, GRAY);
+            RL_DrawText(TextFormat("CURRENT FRAME IMAGE.DATA OFFSET: %02i", nextFrameDataOffset), 50, 90, 20, GRAY);
 
-            DrawText("FRAMES DELAY: ", 100, 305, 10, DARKGRAY);
-            DrawText(TextFormat("%02i frames", frameDelay), 620, 305, 10, DARKGRAY);
-            DrawText("PRESS RIGHT/LEFT KEYS to CHANGE SPEED!", 290, 350, 10, DARKGRAY);
+            RL_DrawText("FRAMES DELAY: ", 100, 305, 10, DARKGRAY);
+            RL_DrawText(TextFormat("%02i frames", frameDelay), 620, 305, 10, DARKGRAY);
+            RL_DrawText("PRESS RIGHT/LEFT KEYS to CHANGE SPEED!", 290, 350, 10, DARKGRAY);
 
             for (int i = 0; i < MAX_FRAME_DELAY; i++)
             {
@@ -105,7 +105,7 @@ int main(void)
 
             DrawTexture(texScarfyAnim, GetScreenWidth()/2 - texScarfyAnim.width/2, 140, WHITE);
 
-            DrawText("(c) Scarfy sprite by Eiden Marsal", screenWidth - 200, screenHeight - 20, 10, GRAY);
+            RL_DrawText("(c) Scarfy sprite by Eiden Marsal", screenWidth - 200, screenHeight - 20, 10, GRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -116,7 +116,7 @@ int main(void)
     UnloadTexture(texScarfyAnim);   // Unload texture
     UnloadImage(imScarfyAnim);      // Unload image (contains all frames)
 
-    CloseWindow();                  // Close window and OpenGL context
+    RL_CloseWindow();                  // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

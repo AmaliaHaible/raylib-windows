@@ -116,11 +116,11 @@ int main(void)
                 DrawRectangle(0, 0, screenWidth, screenHeight, WHITE);
             EndShaderMode();
 
-            DrawText(TextFormat("PRESS [A] to TOGGLE SHADER AUTOLOADING: %s",
+            RL_DrawText(TextFormat("PRESS [A] to TOGGLE SHADER AUTOLOADING: %s",
                      shaderAutoReloading? "AUTO" : "MANUAL"), 10, 10, 10, shaderAutoReloading? RED : BLACK);
-            if (!shaderAutoReloading) DrawText("MOUSE CLICK to SHADER RE-LOADING", 10, 30, 10, BLACK);
+            if (!shaderAutoReloading) RL_DrawText("MOUSE CLICK to SHADER RE-LOADING", 10, 30, 10, BLACK);
 
-            DrawText(TextFormat("Shader last modification: %s", asctime(localtime(&fragShaderFileModTime))), 10, 430, 10, BLACK);
+            RL_DrawText(TextFormat("Shader last modification: %s", asctime(localtime(&fragShaderFileModTime))), 10, 430, 10, BLACK);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -130,7 +130,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
     UnloadShader(shader);           // Unload shader
 
-    CloseWindow();                  // Close window and OpenGL context
+    RL_CloseWindow();                  // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

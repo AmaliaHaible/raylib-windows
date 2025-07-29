@@ -75,7 +75,7 @@ int main(void)
 
             if (IsGamepadAvailable(gamepad))
             {
-                DrawText(TextFormat("GP%d: %s", gamepad, GetGamepadName(gamepad)), 10, 10, 10, BLACK);
+                RL_DrawText(TextFormat("GP%d: %s", gamepad, GetGamepadName(gamepad)), 10, 10, 10, BLACK);
 
                 // Get axis values
                 float leftStickX = GetGamepadAxisMovement(gamepad, GAMEPAD_AXIS_LEFT_X);
@@ -198,7 +198,7 @@ int main(void)
                 {
 
                     // Draw background: generic
-                    DrawRectangleRounded((Rectangle){ 175, 110, 460, 220}, 0.3f, 16, DARKGRAY);
+                    DrawRectangleRounded((RL_Rectangle){ 175, 110, 460, 220}, 0.3f, 16, DARKGRAY);
 
                     // Draw buttons: basic
                     DrawCircle(365, 170, 12, RAYWHITE);
@@ -227,10 +227,10 @@ int main(void)
                     if (IsGamepadButtonDown(gamepad, GAMEPAD_BUTTON_LEFT_FACE_RIGHT)) DrawRectangle(217 + 54, 176, 30, 25, RED);
 
                     // Draw buttons: left-right back
-                    DrawRectangleRounded((Rectangle){ 215, 98, 100, 10}, 0.5f, 16, DARKGRAY);
-                    DrawRectangleRounded((Rectangle){ 495, 98, 100, 10}, 0.5f, 16, DARKGRAY);
-                    if (IsGamepadButtonDown(gamepad, GAMEPAD_BUTTON_LEFT_TRIGGER_1)) DrawRectangleRounded((Rectangle){ 215, 98, 100, 10}, 0.5f, 16, RED);
-                    if (IsGamepadButtonDown(gamepad, GAMEPAD_BUTTON_RIGHT_TRIGGER_1)) DrawRectangleRounded((Rectangle){ 495, 98, 100, 10}, 0.5f, 16, RED);
+                    DrawRectangleRounded((RL_Rectangle){ 215, 98, 100, 10}, 0.5f, 16, DARKGRAY);
+                    DrawRectangleRounded((RL_Rectangle){ 495, 98, 100, 10}, 0.5f, 16, DARKGRAY);
+                    if (IsGamepadButtonDown(gamepad, GAMEPAD_BUTTON_LEFT_TRIGGER_1)) DrawRectangleRounded((RL_Rectangle){ 215, 98, 100, 10}, 0.5f, 16, RED);
+                    if (IsGamepadButtonDown(gamepad, GAMEPAD_BUTTON_RIGHT_TRIGGER_1)) DrawRectangleRounded((RL_Rectangle){ 495, 98, 100, 10}, 0.5f, 16, RED);
 
                     // Draw axis: left joystick
                     Color leftGamepadColor = BLACK;
@@ -256,19 +256,19 @@ int main(void)
 
                 }
 
-                DrawText(TextFormat("DETECTED AXIS [%i]:", GetGamepadAxisCount(gamepad)), 10, 50, 10, MAROON);
+                RL_DrawText(TextFormat("DETECTED AXIS [%i]:", GetGamepadAxisCount(gamepad)), 10, 50, 10, MAROON);
 
                 for (int i = 0; i < GetGamepadAxisCount(gamepad); i++)
                 {
-                    DrawText(TextFormat("AXIS %i: %.02f", i, GetGamepadAxisMovement(gamepad, i)), 20, 70 + 20*i, 10, DARKGRAY);
+                    RL_DrawText(TextFormat("AXIS %i: %.02f", i, GetGamepadAxisMovement(gamepad, i)), 20, 70 + 20*i, 10, DARKGRAY);
                 }
 
-                if (GetGamepadButtonPressed() != GAMEPAD_BUTTON_UNKNOWN) DrawText(TextFormat("DETECTED BUTTON: %i", GetGamepadButtonPressed()), 10, 430, 10, RED);
-                else DrawText("DETECTED BUTTON: NONE", 10, 430, 10, GRAY);
+                if (GetGamepadButtonPressed() != GAMEPAD_BUTTON_UNKNOWN) RL_DrawText(TextFormat("DETECTED BUTTON: %i", GetGamepadButtonPressed()), 10, 430, 10, RED);
+                else RL_DrawText("DETECTED BUTTON: NONE", 10, 430, 10, GRAY);
             }
             else
             {
-                DrawText(TextFormat("GP%d: NOT DETECTED", gamepad), 10, 10, 10, GRAY);
+                RL_DrawText(TextFormat("GP%d: NOT DETECTED", gamepad), 10, 10, 10, GRAY);
 
                 DrawTexture(texXboxPad, 0, 0, LIGHTGRAY);
             }
@@ -282,7 +282,7 @@ int main(void)
     UnloadTexture(texPs3Pad);
     UnloadTexture(texXboxPad);
 
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

@@ -17,7 +17,7 @@ static void DrawTextCenter(const char *text, int x, int y, int fontSize, Color c
 {
     Vector2 size = MeasureTextEx(GetFontDefault(), text, (float)fontSize, 3);
     Vector2 pos = (Vector2){x - size.x/2, y - size.y/2 };
-    DrawTextEx(GetFontDefault(), text, pos, (float)fontSize, 3, color);
+    RL_DrawTextEx(GetFontDefault(), text, pos, (float)fontSize, 3, color);
 }
 
 //------------------------------------------------------------------------------------
@@ -103,7 +103,7 @@ int main(void)
                 const char *text = "Can you see this?";
                 Vector2 size = MeasureTextEx(GetFontDefault(), text, 16, 3);
                 Vector2 pos = (Vector2){GetScreenWidth() - size.x - 5, GetScreenHeight() - size.y - 5};
-                DrawTextEx(GetFontDefault(), text, pos, 16, 3, LIGHTGRAY);
+                RL_DrawTextEx(GetFontDefault(), text, pos, 16, 3, LIGHTGRAY);
             }
 
         EndDrawing();
@@ -112,7 +112,7 @@ int main(void)
 
     // De-Initialization
     //--------------------------------------------------------------------------------------
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

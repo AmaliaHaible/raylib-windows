@@ -181,12 +181,12 @@ int main(void)
 
             if (showControls)
             {
-                DrawText("Press Mouse buttons right/left to zoom in/out and move", 10, 15, 10, RAYWHITE);
-                DrawText("Press KEY_F1 to toggle these controls", 10, 30, 10, RAYWHITE);
-                DrawText("Press KEYS [1 - 6] to change point of interest", 10, 45, 10, RAYWHITE);
-                DrawText("Press KEY_LEFT | KEY_RIGHT to change speed", 10, 60, 10, RAYWHITE);
-                DrawText("Press KEY_SPACE to stop movement animation", 10, 75, 10, RAYWHITE);
-                DrawText("Press KEY_R to recenter the camera", 10, 90, 10, RAYWHITE);
+                RL_DrawText("Press Mouse buttons right/left to zoom in/out and move", 10, 15, 10, RAYWHITE);
+                RL_DrawText("Press KEY_F1 to toggle these controls", 10, 30, 10, RAYWHITE);
+                RL_DrawText("Press KEYS [1 - 6] to change point of interest", 10, 45, 10, RAYWHITE);
+                RL_DrawText("Press KEY_LEFT | KEY_RIGHT to change speed", 10, 60, 10, RAYWHITE);
+                RL_DrawText("Press KEY_SPACE to stop movement animation", 10, 75, 10, RAYWHITE);
+                RL_DrawText("Press KEY_R to recenter the camera", 10, 90, 10, RAYWHITE);
             }
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -197,7 +197,7 @@ int main(void)
     UnloadShader(shader);               // Unload shader
     UnloadRenderTexture(target);        // Unload render texture
 
-    CloseWindow();                      // Close window and OpenGL context
+    RL_CloseWindow();                      // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;

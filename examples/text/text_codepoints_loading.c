@@ -97,8 +97,8 @@ int main(void)
             ClearBackground(RAYWHITE);
 
             DrawRectangle(0, 0, GetScreenWidth(), 70, BLACK);
-            DrawText(TextFormat("Total codepoints contained in provided text: %i", codepointCount), 10, 10, 20, GREEN);
-            DrawText(TextFormat("Total codepoints required for font atlas (duplicates excluded): %i", codepointsNoDupsCount), 10, 40, 20, GREEN);
+            RL_DrawText(TextFormat("Total codepoints contained in provided text: %i", codepointCount), 10, 10, 20, GREEN);
+            RL_DrawText(TextFormat("Total codepoints required for font atlas (duplicates excluded): %i", codepointsNoDupsCount), 10, 40, 20, GREEN);
 
             if (showFontAtlas)
             {
@@ -109,10 +109,10 @@ int main(void)
             else
             {
                 // Draw provided text with loaded font, containing all required codepoint glyphs
-                DrawTextEx(font, text, (Vector2) { 160, 110 }, 48, 5, BLACK);
+                RL_DrawTextEx(font, text, (Vector2) { 160, 110 }, 48, 5, BLACK);
             }
 
-            DrawText("Press SPACE to toggle font atlas view!", 10, GetScreenHeight() - 30, 20, GRAY);
+            RL_DrawText("Press SPACE to toggle font atlas view!", 10, GetScreenHeight() - 30, 20, GRAY);
 
         EndDrawing();
         //----------------------------------------------------------------------------------
@@ -122,7 +122,7 @@ int main(void)
     //--------------------------------------------------------------------------------------
     UnloadFont(font);     // Unload font
 
-    CloseWindow();        // Close window and OpenGL context
+    RL_CloseWindow();        // Close window and OpenGL context
     //--------------------------------------------------------------------------------------
 
     return 0;
