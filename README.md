@@ -1,3 +1,22 @@
+This Fork renames Rectangle, CloseWindow(), ShowCursor(), LoadImage(), DrawText(), DrawTextEx(), PlaySound() to add the prefix RL_
+
+This is to fix compatibility with windows.h.
+
+I did not rename everything cause i am lazy. I used clangd to rename all references to those names automatically.
+
+I might or might not make a different branch in the future that adds a prefix to everything, but i currently have no idea how to do that automatically.
+
+To use this, I just did this:
+```bash
+mkdir build
+cd build
+cmake ..
+cmake --build .
+```
+Then include build/raylib/include and link against build/raylib/libraylib.a
+
+---
+
 <img align="left" style="width:260px" src="https://github.com/raysan5/raylib/blob/master/logo/raylib_logo_animation.gif" width="288px">
 
 **raylib is a simple and easy-to-use library to enjoy videogames programming.**
